@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book.model';
 
@@ -12,11 +12,22 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl);
+    // Prevent aggressive browser caching of our GET list
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+    return this.http.get<Book[]>(this.apiUrl, { headers });
   }
 
   getBook(id: number): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/${id}`);
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+    return this.http.get<Book>(`${this.apiUrl}/${id}`, { headers });
   }
 
   addBook(book: Book): Observable<Book> {
@@ -31,3 +42,4 @@ export class BookService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
