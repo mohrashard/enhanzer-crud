@@ -12,22 +12,12 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
-    // Prevent aggressive browser caching of our GET list
-    const headers = new HttpHeaders({
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
-    return this.http.get<Book[]>(this.apiUrl, { headers });
+    // Prevent aggressive browser caching with a unique query string
+    return this.http.get<Book[]>(`${this.apiUrl}?t=${new Date().getTime()}`);
   }
 
   getBook(id: number): Observable<Book> {
-    const headers = new HttpHeaders({
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
-    return this.http.get<Book>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<Book>(`${this.apiUrl}/${id}?t=${new Date().getTime()}`);
   }
 
   addBook(book: Book): Observable<Book> {
