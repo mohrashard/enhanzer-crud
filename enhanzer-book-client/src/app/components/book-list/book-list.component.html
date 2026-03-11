@@ -2,7 +2,8 @@
   <h2>Book List</h2>
 
   <div class="actions">
-    <button class="btn btn-primary" (click)="loadBooks()">Refresh List</button>
+    <button class="btn btn-primary" routerLink="/books/new" style="margin-right: 10px;">Add New Book</button>
+    <button class="btn btn-secondary" (click)="loadBooks()">Refresh List</button>
   </div>
 
   <table class="book-table">
@@ -25,7 +26,7 @@
           <td>{{ book.isbn }}</td>
           <td>{{ book.publicationDate | date:'mediumDate' }}</td>
           <td class="action-buttons">
-            <button class="btn btn-warning btn-sm" (click)="editBook(book.id)">Edit</button>
+            <button class="btn btn-warning btn-sm" [routerLink]="['/books/edit', book.id]">Edit</button>
             <button class="btn btn-danger btn-sm" (click)="deleteBook(book.id)">Delete</button>
           </td>
         </tr>

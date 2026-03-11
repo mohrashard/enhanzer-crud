@@ -1,0 +1,50 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Book' : 'Add New Book' }}</h2>
+
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="title">Title *</label>
+      <input id="title" type="text" formControlName="title" class="form-control"
+             [class.is-invalid]="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+      @if (bookForm.get('title')?.invalid && bookForm.get('title')?.touched) {
+        <div class="text-danger">Title is required.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author *</label>
+      <input id="author" type="text" formControlName="author" class="form-control"
+             [class.is-invalid]="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">
+      @if (bookForm.get('author')?.invalid && bookForm.get('author')?.touched) {
+        <div class="text-danger">Author is required.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="isbn">ISBN *</label>
+      <input id="isbn" type="text" formControlName="isbn" class="form-control"
+             [class.is-invalid]="bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched">
+      @if (bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched) {
+        <div class="text-danger">A valid ISBN is required.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="publicationDate">Publication Date *</label>
+      <input id="publicationDate" type="date" formControlName="publicationDate" class="form-control"
+             [class.is-invalid]="bookForm.get('publicationDate')?.invalid && bookForm.get('publicationDate')?.touched">
+      @if (bookForm.get('publicationDate')?.invalid && bookForm.get('publicationDate')?.touched) {
+        <div class="text-danger">Publication Date is required.</div>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">
+        {{ isEditMode ? 'Update Book' : 'Save Book' }}
+      </button>
+      <button type="button" class="btn btn-secondary" routerLink="/books">Cancel</button>
+    </div>
+
+  </form>
+</div>
