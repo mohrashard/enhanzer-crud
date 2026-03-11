@@ -1,0 +1,56 @@
+﻿
+> enhanzer-book-client@0.0.0 build
+> ng build
+
+node.exe : Node.js version 
+v25.7.0 detected.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Node.js  
+   version v25.7.0 detecte   
+ d.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+Odd numbered Node.js 
+versions will not enter LTS 
+status and should not be 
+used for production. For 
+more information, please see 
+https://nodejs.org/en/about/p
+revious-releases/.
+[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[35mBrowser bundles[39m     
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mmain-OC5MBDKD.js[39m    [2m | [22m[2mmain[22m            [2m | [22m[36m327.07 kB[39m[2m | [22m               [36m87.07 kB[39m
+[32mstyles-5INURTSO.css[39m [2m | [22m[2mstyles[22m          [2m | [22m  [36m0 bytes[39m[2m | [22m                [36m0 bytes[39m
+
+[1m [22m                   [2m | [22m[1mInitial total[22m   [2m | [22m[1m327.07 kB[22m[2m | [22m               [1m87.07 kB[22m
+
+
+[35mServer bundles[39m      
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mserver.mjs[39m          [2m | [22m[2mserver[22m          [2m | [22m[36m810.37 kB[39m[2m | [22m                       
+[32mmain.server.mjs[39m     [2m | [22m[2mmain.server[22m     [2m | [22m[36m762.51 kB[39m[2m | [22m                       
+[32mpolyfills.server.mjs[39m[2m | [22m[2mpolyfills.server[22m[2m | [22m[36m233.25 kB[39m[2m | [22m                       
+[32mchunk-L2MVFUKD.mjs[39m  [2m | [22m[2m-[22m               [2m | [22m  [36m1.32 kB[39m[2m | [22m                       
+[32mchunk-T55IDOPT.mjs[39m  [2m | [22m[2m-[22m               [2m | [22m[36m976 bytes[39m[2m | [22m                       
+
+[1mLazy chunk files[22m    [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mchunk-RHDGF2TI.mjs[39m  [2m | [22m[2mxhr2[22m            [2m | [22m [36m12.14 kB[39m[2m | [22m                       
+[32mchunk-N3SI5I4Q.mjs[39m  [2m | [22m[2mxhr2[22m            [2m | [22m [36m12.07 kB[39m[2m | [22m                       
+
+[35mPrerendered 0 static routes.[39m
+Application bundle generation complete. [3.568 seconds] - 2026-03-11T19:14:52.733Z
+
+Output location: C:\Projects\Enhanzer\enhanzer-book-client\dist\enhanzer-book-client
+
